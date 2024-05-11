@@ -1,0 +1,59 @@
+{
+  "expo": {
+    "name": "SaffatProject",
+    "slug": "SaffatProject",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "notification": {
+      "icon": "./assets/msa.png",
+      "color": "#ffffff",
+      "sounds": [
+        "./assets/adan.wav",
+        "./assets/adan.wav"
+      ]
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "a"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.y_ibhir.SaffatProject",
+      "googleServicesFile" :"./android/app/google-services.json"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/msa.png",
+          "color": "#ffffff",
+          "sounds": [
+            "./assets/adan.wav",
+            "./assets/adan.wav"
+          ]
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a1efd851-489b-483f-8811-fdd2097a6565"
+      }
+    }
+  }
+}
