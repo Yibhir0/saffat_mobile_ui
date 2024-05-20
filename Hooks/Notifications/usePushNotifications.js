@@ -4,12 +4,7 @@ import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 import Constants from 'expo-constants';
 
-
-
 export default function usePushNotifications() {
-
-    const notfUrl = `${process.env.EXPO_PUBLIC_NOTF_URL}/api/push_tokens/token`;
-    console.log(notfUrl);
 
     Notifications.setNotificationHandler({
         handleNotification: async () => ({
@@ -57,35 +52,10 @@ export default function usePushNotifications() {
             alert('Must use physical device for Push Notifications');
         }
 
-
-        storePushToken(token).then(t => console.log(t));
-
         return token;
     }
 
-    async function storePushToken(t) {
 
-        try {
-            console.log("fetch");
-            let res = await fetch(notfUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    t
-                }),
-            });
-            console.log(res);
-            if (!res.ok) {
-                let data = await res.json();
-                throw Error(data.error);
-            }
-        } catch (error) {
-            console.log('error in registerForPushNotificationsAsync');
-            console.log(error.message);
-        }
-    }
     useEffect(() => {
         registerForPushNotificationsAsync().then(token => setExpoPushToken(token));
 
